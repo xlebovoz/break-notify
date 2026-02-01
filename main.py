@@ -1,6 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QAction
-from PyQt5.QtGui import QIcon, QPixmap, QColor
+from PyQt5.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QAction, QStyle
+# from PyQt5.QtGui import QIcon, QPixmap, QColor
 from PyQt5.QtCore import QTimer
 from datetime import datetime
 
@@ -8,9 +8,7 @@ from datetime import datetime
 app = QApplication(sys.argv)
 
 # Иконка
-pixmap = QPixmap(32, 32)
-pixmap.fill(QColor(0, 200, 0))  # Зеленый
-icon = QIcon(pixmap)
+icon = app.style().standardIcon(QStyle.SP_MediaPlay)  # Иконка вперед
 
 # Создаем иконку в трее
 tray = QSystemTrayIcon()
